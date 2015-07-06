@@ -1,7 +1,7 @@
 <?php
 /*斐波那契数列&递归方法使用内存存放变量个数*/
 
-$n=10;//Param:n
+$n=7;//Param:n
 
 /*循环*/
 $PrintResult=Fibonacci_Circle($n);

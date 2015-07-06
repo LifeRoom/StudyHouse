@@ -1,12 +1,20 @@
 <?php
 
-class test {
-    public static $profiler  = null;
+SendMail();
+
+function SendMail(){
+    require_once('mail_service.php');
+    $mailc=new mail_service;
+    $mailc->MailSend();
+}
+
+//class test {
+//    public static $profiler  = null;
     
-    function testa(){
-        $a=(!self::$profiler);
-        echo $a;
-    }
+//    function testa(){
+//        $a=(!self::$profiler);
+//        echo $a;
+//    }
     
 /**
  * test for printing the comment
@@ -48,4 +56,4 @@ class test {
 //$a=strlen(mb_convert_encoding("１1", 'SJIS', 'UTF-8'));
 //echo $a;
 //echo phpinfo();
-}
+//}
