@@ -14,7 +14,7 @@ function bubbleSort($arr_nums,$sort_rule){
 	//升序
 	if(strtolower($sort_rule)=="asc"){
 		//n个数，排好n-1个即可。
-		for($i=0;$i<count($arr_nums);$i++){
+		for($i=0;$i<count($arr_nums)-1;$i++){
 			//排每一个数需要的步数
 			for($j=0;$j<count($arr_nums)-1-$i;$j++){
 				if($arr_nums[$j]>$arr_nums[$j+1]){
@@ -30,7 +30,7 @@ function bubbleSort($arr_nums,$sort_rule){
 	//降序
 	elseif(strtolower($sort_rule)=="desc"){
 		//n个数，排好n-1即可。
-		for($i=0;$i<count($arr_nums);$i++){
+		for($i=0;$i<count($arr_nums)-1;$i++){
 			//排每一个数需要的步数
 			for($j=0;$j<count($arr_nums)-1-$i;$j++){
 				//交换位置
