@@ -10,9 +10,9 @@ function bubbleSort($arr_nums,$sort_rule){
 	$temp_num=0;
 	//升序
 	if(strtolower($sort_rule)=="asc"){
-		//n个数，排好n-1即可。
+		//n个数，排好n-1个即可。
 		for($i=0;$i<count($arr_nums);$i++){
-			//
+			//排每一个数需要的步数
 			for($j=0;$j<count($arr_nums)-1-$i;$j++){
 				if($arr_nums[$j]>$arr_nums[$j+1]){
 					//交换位置
@@ -28,13 +28,13 @@ function bubbleSort($arr_nums,$sort_rule){
 	elseif(strtolower($sort_rule)=="desc"){
 		//n个数，排好n-1即可。
 		for($i=0;$i<count($arr_nums);$i++){
-			//
+			//排每一个数需要的步数
 			for($j=0;$j<count($arr_nums)-1-$i;$j++){
 				//交换位置
 				if($arr_nums[$j]<$arr_nums[$j+1]){
 					$temp_num=$arr_nums[$j];
 					$arr_nums[$j]=$arr_nums[$j+1];
-					$arr_nums[$j+1]=$arr_nums[$j];
+					$arr_nums[$j+1]=$temp_num;
 				}
 			}
 		}
@@ -48,7 +48,7 @@ function bubbleSort($arr_nums,$sort_rule){
 }
 
 //初始化一个数组
-$arr=array(10,3,5,7,8,9,25,200);
+$arr=array(0,10,3,5,7,8,9,25,200);
 //调用排序函数，升序,打印结果
 $arr_sorted=bubbleSort($arr,"asc");
 echo "<br/>" . "The Numbers Sorted by ASC:" . "<br/>";
