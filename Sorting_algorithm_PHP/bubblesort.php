@@ -5,9 +5,13 @@
 //平均时间复杂度为O(n^2)
 //最差空间复杂度	总共O(n)，需要辅助空间O(1)
 
-
 /*$sort_rule为"asc" "desc"*/
 function bubbleSort($arr_nums,$sort_rule){
+
+	//数字个数检查
+	if (count($arr_nums)<=1){
+		return $arr_nums;
+	}
 	
 	//中间变量，用于交换相近的两个数字。
 	$temp_num=0;
@@ -25,7 +29,6 @@ function bubbleSort($arr_nums,$sort_rule){
 				}
 			}
 		}
-		return $arr_nums;
 	}
 	//降序
 	elseif(strtolower($sort_rule)=="desc"){
@@ -41,13 +44,13 @@ function bubbleSort($arr_nums,$sort_rule){
 				}
 			}
 		}
-		return $arr_nums;
 	}
 	//排序规则参数错误
 	else{
 		echo "error!sort_rule is wrong";
 		die;
 	}
+	return $arr_nums;	
 }
 
 //初始化一个数组

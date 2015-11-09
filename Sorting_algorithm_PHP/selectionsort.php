@@ -8,7 +8,14 @@ function selectionsort($arr_nums,$sort_rule){
 	
 	//中间变量，交换数字用
 	$temp_num=0;
+	
+	//需排序数字个数
 	$nums_count=count($arr_nums);
+	
+	//数字个数检查
+	if ($nums_count<=1){
+		return $arr_nums;
+	}
 	
 	if(strtolower($sort_rule)=="asc"){
 		//n个数，排好n-1个即可。
@@ -30,7 +37,6 @@ function selectionsort($arr_nums,$sort_rule){
 			$arr_nums[$i]=$minNum;
 			$arr_nums[$minIndex]=$temp_num;
 		}
-		return $arr_nums;
 	}
 	elseif(strtolower($sort_rule=="desc")){
 		//n个数，排好n-1个即可。
@@ -52,12 +58,13 @@ function selectionsort($arr_nums,$sort_rule){
 			$arr_nums[$i]=$maxNum;
 			$arr_nums[$maxIndex]=$temp_num;
 		}
-		return $arr_nums;
 	}
+	//排序规则参数错误
 	else{
 		echo "sort rule is wrong";
 		die;
 	}
+	return $arr_nums;
 }
 
 

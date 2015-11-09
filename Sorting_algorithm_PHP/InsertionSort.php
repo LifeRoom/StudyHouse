@@ -4,11 +4,16 @@
 //最良計算時間	O(n)
 //平均計算時間	О(n^2)
 //最悪空間計算量	О(n) total, O(1) auxiliary
-
-
 function InsertionSort($arr_nums,$sort_rule){
+
 	//需排序数字个数
 	$nums_count=count($arr_nums);
+	
+	//数字个数检查
+	if ($nums_count<=1){
+		return $arr_nums;
+	}
+	
 	//升序
 	if(strtolower($sort_rule)=="asc"){
 		//从第二个数开始，跟前面的所有数进行比较，并将其插入到合适位置
