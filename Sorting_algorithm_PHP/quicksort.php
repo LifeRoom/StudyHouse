@@ -50,7 +50,7 @@ function QuickSort($arr_nums,$sort_rule){
 }
 
 //初始化一个数组
-$arr=array(0,10,3,5,7,8,9,25,200);
+$arr=array(0,10,3,5,7,25,8,9,200);
 //调用排序函数，升序,打印结果
 $arr_sorted=QuickSort($arr,"asc");
 echo "<br/>" . "The Numbers Sorted by ASC:" . "<br/>";
