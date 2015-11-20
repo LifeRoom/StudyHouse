@@ -21,6 +21,7 @@
         //init
         $paging->pageNow=1;
         $paging->pageSize=10;
+        $paging->gotoUrl="userlist.php";
         
         if(!empty($_GET['pagenow'])){
             $paging->pageNow=$_GET['pagenow'];//the current page

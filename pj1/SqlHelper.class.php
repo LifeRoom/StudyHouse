@@ -70,12 +70,12 @@ class SqlHelper{
         //the pre page
         if($paging->pageNow>1){
             $prepage=$paging->pageNow-1;
-            $paging->navigate= "<a href='userlist.php?pagenow=$prepage'>before</a> &nbsp;";
+            $paging->navigate .= "<a href='{$paging->gotoUrl}?pagenow=$prepage'>before</a> &nbsp;";
         }
         //the next page
         if($paging->pageNow<$paging->pageCount){
             $nextpage=$paging->pageNow+1;
-            $paging->navigate  .= "<a href='userlist.php?pagenow=$nextpage'>next</a> &nbsp;";
+            $paging->navigate  .= "<a href='{$paging->gotoUrl}?pagenow=$nextpage'>next</a> &nbsp;";
         }
         
         //the first page in the navigate
@@ -85,13 +85,13 @@ class SqlHelper{
         $end=($start+9)<($paging->pageCount)?($start+9):($paging->pageCount);
         
         if($start>1){
-            $paging->navigate  .= "<a href='userlist.php?pagenow=". ($start-1) ."'><<</a>";
+            $paging->navigate  .= "<a href='{$paging->gotoUrl}?pagenow=". ($start-1) ."'><<</a>";
         }    
         for($start=$start;$start<=$end;$start++){
-            $paging->navigate  .= "<a href='userlist.php?pagenow={$start}'>{$start}</a> &nbsp;";
+            $paging->navigate  .= "<a href='{$paging->gotoUrl}?pagenow={$start}'>{$start}</a> &nbsp;";
         }
         if($start<$paging->pageCount){
-            $paging->navigate  .= "<a href='userlist.php?pagenow={$start}'>>></a>";        
+            $paging->navigate  .= "<a href='{$paging->gotoUrl}?pagenow={$start}'>>></a>";        
         }
         
         $paging->navigate  .= "当前{$paging->pageNow}页/共{$paging->pageCount}页";        
