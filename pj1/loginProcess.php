@@ -6,12 +6,25 @@
  * and open the template in the editor.
  */
 
+require_once 'AdminService.class.php';
+
 //接收数据
 //id
 $id=$_POST['id'];
 //password
 $password=$_POST['password'];
 
+$adminService=new AdminService();
+if($name=$adminService->checkAdmin($id,$password)){
+    header("location:usermain.php?name=$name");
+    exit();
+}else{
+    header("location:login.php?errno=1");
+    exit();
+}
+    ;
+
+/*
 //database check
 //connect database
 $Conn=new mysqli("localhost","root","","pj1");
@@ -38,3 +51,4 @@ if($CorrectPassword=$Conn->query($UserSql)){
     header("location:login.php?errno=2");
 }
 $Conn->close();
+ */

@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}chinasoft-tokyo zll
+${licensePrefix}2015-11
+<#if licenseLast??>
+${licenseLast}
+</#if>
