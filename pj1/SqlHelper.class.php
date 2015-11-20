@@ -1,10 +1,10 @@
 <?php
 
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * chinasoft-tokyo zll
+ * 2015-11
  */
+
 class SqlHelper{
     
     private $conn;
@@ -98,6 +98,7 @@ class SqlHelper{
         
         
     }
+    
     //dml
     public function execute_dml($sql){
         $res=$this->conn->query($sql);

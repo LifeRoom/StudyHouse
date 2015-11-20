@@ -32,11 +32,19 @@ function getMemberByPage($pagesize,$pagenow){
 }
 
 function getPaging($paging){
-    $sqlHelper= new SqlHelper;
     $sql1="select * from user limit " . ($paging->pageNow-1)*$paging->pageSize . "," . $paging->pageSize;
     $sql2="select count(1) from user";
+    $sqlHelper= new SqlHelper();
     $sqlHelper->execute_dql_paging($sql1, $sql2, $paging);
     $sqlHelper->close_connect();
+}
+
+function delUserById($id){
+    $delSql="delete from user where id=$id";
+    $sqlHelper= new SqlHelper();
+    $res= $sqlHelper->execute_dml($delSql);
+    $sqlHelper->close_connect();
+    return $res;
 }
 
 }

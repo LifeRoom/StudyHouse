@@ -3,7 +3,9 @@
         <meta http-equiv="content-type" content="text/html;char-set=utf-8">
     </head>
     <?php
-    echo "welcome &nbsp;" .$_GET['name'] . "<br/>";
+    if(!empty($_GET['name'] )){
+        echo "welcome &nbsp;" . $_GET['name'] . "<br/>";        
+    }
     echo "login success";
     echo "<br/><a href='login.php'>logout</a>";
     ?>
