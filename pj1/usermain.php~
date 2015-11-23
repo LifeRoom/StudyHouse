@@ -4,9 +4,7 @@
     </head>
     <?php
     require_once 'common.php';
-    checkUserValidate();
     getLastTime();
-    
     if(!empty($_GET['name'] )){
         echo "welcome &nbsp;" . $_GET['name'] . "<br/>";        
     }

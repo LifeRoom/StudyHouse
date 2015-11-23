@@ -14,7 +14,8 @@
         
         require_once 'UserService.class.php';
         require_once 'Paging.class.php';
-
+        require_once 'common.php';
+        checkUserValidate();
         $userService= new UserService();  
         
         $paging= new Paging();

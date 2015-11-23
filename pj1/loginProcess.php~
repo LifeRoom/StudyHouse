@@ -11,8 +11,7 @@ require_once 'AdminService.class.php';
 //id
 $id=$_POST['id'];
 if(empty($id)){
-  include 'login.php';
-  exit();
+    include 'login.php';
 }
 //password
 $password=$_POST['password'];
@@ -25,13 +24,10 @@ if(!empty($_POST['keep'])){
 }
 
 $adminService=new AdminService();
-$name=$adminService->checkAdmin($id,$password);
-if($name!==""){
-    session_start();
-    $_SESSION['loginuser']=$name;
+if($name=$adminService->checkAdmin($id,$password)){
     header("location:usermain.php?name=$name");
     exit();
-}else{   
+}else{
     header("location:login.php?errno=1");
     exit();
 }
